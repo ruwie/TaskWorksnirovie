@@ -75,6 +75,7 @@
                 <nav class="col-12">
                     <a href="admin_dashboard.php">Dashboard</a>
                     <a href="create_task.php">Create task</a>
+                    <a href="manage_task.php">Manage task</a>
                     <a href="../index.php">Log out</a>
                 </nav>
             </div>
