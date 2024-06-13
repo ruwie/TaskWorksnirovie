@@ -42,7 +42,7 @@
                     <a href="admin_dashboard.php">Dashboard</a>
                     <a href="create_task.php">create task</a>
                     <a href="manage_task.php">Manage task</a>
-                    <a href="index.php">Log out</a>
+                    <a href="../index.php">Log out</a>
                 </nav>
             </div>
         </div>
@@ -77,9 +77,11 @@
                     <td><?php echo $row['start_date']; ?></td>
                     <td><?php echo $row['end_date']; ?></td>
                     <td><?php echo $row['status']; ?></td>
+                    <td><a class="btn btn-warning" href="edit_task.php?id=<?php echo $row['tid']; ?>">Edit</a> | <a class="btn btn-danger" href="delete_task.php?id=<?php echo $row['tid']; ?>">Delete</a></td>
                 </tr>
                 
                 <?php
+                $sno = $sno + 1;
             }
         ?>
     </table>

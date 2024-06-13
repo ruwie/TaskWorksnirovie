@@ -1,4 +1,5 @@
 <?php
+session_start();
     include('includes/connection.php');
     if(isset($_POST['userLogin'])){
         $query = "SELECT email,password,name,sid FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
@@ -6,6 +7,11 @@
         $query_run = mysqli_query($connection, $query);
 
         if(mysqli_num_rows($query_run)){
+            while($row = mysqli_fetch_assoc($query_run)){
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['sid'] = $row['sid'];
+            }
             echo "<script type='text/javascript'>                    
                     window.location.href = 'user_dashboard.php';
                 </script>";
